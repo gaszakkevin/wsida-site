@@ -1,0 +1,58 @@
+name: Site update (new releases)
+# Adds every newly PUBLIC WSIDA video/Short (channel RSS + oEmbed check) and live
+# Gumroad pack/book to index.html's "New releases" section. Additive only.
+on:
+  schedule:
+    - cron: "40 12 * * *"   # 6:40 AM CST, after the 6:15/6:20 publishes
+    - cron: "15 14 * * *"   # 8:15 AM CST catch-up
+    - cron: "15 19 * * *"   # 1:15 PM CST (Saturday packs / Sunday books)
+    - cron: "15 2 * * *"    # 8:15 PM CST
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["tools/site_update.py", "releases.json", ".github/workflows/site-update.yml"]
+  issues:
+    types: [opened]
+permissions:
+  contents: write
+  issues: write
+  pages: write
+concurrency:
+  group: site-update
+  cancel-in-progress: false
+jobs:
+  update:
+    # Issue trigger: only issues the repo OWNER opens with a title starting "site-add".
+    if: github.event_name != 'issues' || (startsWith(github.event.issue.title, 'site-add') && github.event.issue.author_association == 'OWNER')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Add entry from owner issue
+        if: github.event_name == 'issues'
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: python3 tools/site_update.py from-issue
+      - name: Discover new public releases
+        run: python3 tools/site_update.py discover
+      - name: Render New releases section
+        run: python3 tools/site_update.py render
+      - name: Commit and push if changed
+        id: commit
+        run: |
+          git config user.name "wsida-site-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html releases.json
+          if git diff --cached --quiet; then echo "changed=false" >> "$GITHUB_OUTPUT"; exit 0; fi
+          git commit -m "Site: add new releases ($(date -u +%Y-%m-%d))"
+          git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+      - name: Request Pages build
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || true
+      - name: Close the issue
+        if: github.event_name == 'issues' && always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh issue close ${{ github.event.issue.number }} -R ${{ github.repository }} -c "Site updater ran (${{ job.status }}). Check https://whatshouldidreamabout.com/#new" || true
