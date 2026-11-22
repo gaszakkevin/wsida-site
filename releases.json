@@ -1,6 +1,15 @@
 {
   "entries": [
     {
+      "type": "video",
+      "title": "Bo the Bundled Penguin Lullaby (Window Seat Lofi) | Bedtime Songs for Babies & Toddlers 🎄 45 Min",
+      "url": "https://youtu.be/P96uxdQfNrg",
+      "date": "2026-11-22",
+      "note": "",
+      "source": "youtube-rss",
+      "live": true
+    },
+    {
       "type": "book",
       "title": "Ember and the Quiet Pumpkin Lights",
       "url": "https://www.amazon.com/dp/B0HPXP5YMM",
@@ -16,6 +25,15 @@
       "date": "2026-11-22",
       "note": "",
       "source": "gumroad",
+      "live": true
+    },
+    {
+      "type": "short",
+      "title": "Sleeping Bo (Christmas Winter Lofi) 💤",
+      "url": "https://youtu.be/OsthNKK3WKo",
+      "date": "2026-11-22",
+      "note": "",
+      "source": "youtube-rss",
       "live": true
     },
     {
