@@ -325,6 +325,15 @@
       "live": true
     },
     {
+      "type": "book",
+      "title": "Puff and the Soft Cloud Boat",
+      "url": "https://www.amazon.com/dp/B0HR8N636P",
+      "date": "2026-11-13",
+      "note": "Retry of #7 and #13. #13 added the card but the push was rejected after a concurrent #9 commit; the issue was auto-closed.",
+      "source": "owner-issue",
+      "live": true
+    },
+    {
       "type": "short",
       "title": "Sleep with Miso (Thanksgiving Garden Lofi) 💤",
       "url": "https://youtu.be/CO6tg27SR04",
