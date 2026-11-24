@@ -56,6 +56,15 @@
     },
     {
       "type": "book",
+      "title": "Otto and the Soft Christmas Lights (Kindle)",
+      "url": "https://www.amazon.com/dp/B0HS2HRPTN",
+      "date": "2026-11-22",
+      "note": "Kindle edition. Retry of #10, whose first run was cancelled by workflow concurrency when #9 landed.",
+      "source": "owner-issue",
+      "live": true
+    },
+    {
+      "type": "book",
       "title": "Ember and the Quiet Pumpkin Lights",
       "url": "https://www.amazon.com/dp/B0HPXP5YMM",
       "date": "2026-11-22",
