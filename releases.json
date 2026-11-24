@@ -10,6 +10,15 @@
       "live": true
     },
     {
+      "type": "book",
+      "title": "Zeph and the Thankful Leaves",
+      "url": "https://www.amazon.com/dp/B0HQ1M19PY",
+      "date": "2026-11-24",
+      "note": "Retry of #5 and #11. Earlier runs never processed or were cancelled by workflow concurrency.",
+      "source": "owner-issue",
+      "live": true
+    },
+    {
       "type": "short",
       "title": "Sleep with Nova (Christmas Nature Lofi) 💤",
       "url": "https://youtu.be/zBayJ9k6fuQ",
