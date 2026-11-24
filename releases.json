@@ -19,6 +19,15 @@
       "live": true
     },
     {
+      "type": "book",
+      "title": "Momo's Dreamy Night Coloring Book",
+      "url": "https://www.amazon.com/dp/B0HPHLT4GK",
+      "date": "2026-11-24",
+      "note": "Retry of #6 and #12. Earlier runs never processed or were cancelled by workflow concurrency.",
+      "source": "owner-issue",
+      "live": true
+    },
+    {
       "type": "short",
       "title": "Sleep with Nova (Christmas Nature Lofi) 💤",
       "url": "https://youtu.be/zBayJ9k6fuQ",
