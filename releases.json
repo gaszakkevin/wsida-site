@@ -1,9 +1,27 @@
 {
   "entries": [
     {
+      "type": "video",
+      "title": "Pip the Lantern Bunny Lullaby (Sleigh Lofi) | Bedtime Songs for Babies & Toddlers 🎄 45 Min",
+      "url": "https://youtu.be/7zxgT3e-D8Y",
+      "date": "2026-11-26",
+      "note": "",
+      "source": "youtube-rss",
+      "live": true
+    },
+    {
       "type": "short",
       "title": "Goodnight Momo (Christmas Creek Lofi) 🌙",
       "url": "https://youtu.be/le4QVsLVnug",
+      "date": "2026-11-26",
+      "note": "",
+      "source": "youtube-rss",
+      "live": true
+    },
+    {
+      "type": "short",
+      "title": "Sleep with Pip (Christmas Lofi) 💤",
+      "url": "https://youtu.be/UqDHvXoFcmE",
       "date": "2026-11-26",
       "note": "",
       "source": "youtube-rss",
